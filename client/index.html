@@ -6,9 +6,14 @@
 </head>
 
 <body>
+	{{> searchBox }}<br />
 	{{> loadPlayer }}
 </body>
 
+<template name="searchBox">
+	<input type="text" value="" id="searchbox">
+</template>
 <template name="loadPlayer">
 	<div id="ytapiplayer">Install Flash</div>
+	<div id="video-title"></div>
 </template>
