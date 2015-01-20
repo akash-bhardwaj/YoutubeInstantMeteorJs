@@ -2,29 +2,53 @@
   <title>YoutubeInstant</title>
   <script src="http://ajax.googleapis.com/ajax/libs/swfobject/2.2/swfobject.js" type="text/javascript"></script>
 	<script src="https://ajax.googleapis.com/ajax/libs/jqueryui/1.11.2/jquery-ui.min.js"></script>
+	<link href="//maxcdn.bootstrapcdn.com/font-awesome/4.2.0/css/font-awesome.min.css" rel="stylesheet">
 	<script src="//use.typekit.net/qlu0fiu.js"></script>
 	<script>try{Typekit.load();}catch(e){}</script>
 </head>
 
 <body>
-	{{> searchBox }}<br />
-	{{> loadPlayer }}
-	{{> playLists }}
+	<div class="wrapper">
+		<div class="header">
+			<div class="search">
+				{{> searchBox }}	
+			</div>
+		</div>
+		<div class="content clearfix">
+			<div class="player">
+				{{> loadPlayer }}
+			</div>
+			<div class="playlist-section">
+				{{> playLists }}
+			</div>
+		</div>
+		<div class="footer">
+			<div class="foot-wrap">
+				<p>Made with <i class="fa fa-heart love"></i> by <a href="http://www.nelipot.in" target="_blank">Akash Bhardwaj</a></p>&nbsp;•&nbsp;
+				<div class="social">
+					<a href="http://twitter.com/share" class="twitter" data-via="akashbdj"><i class="fa fa-twitter"></i></a>
+					<a href="" class="facebook"><i class="fa fa-facebook"></i></a>
+				</div>
+			</div>
+		</div>
+	</div>
 </body>
 
 <template name="searchBox">
-	<input type="text" value="" id="searchbox">
+	<input type="text" value="" id="searchbox" placeholder="Search . .">
 </template>
 <template name="loadPlayer">
 	<div id="ytapiplayer">You need Flash to watch the videos. Please install!</div>
 	<div id="video-title"></div>
+	<div id="views"></div>
 </template>
 <template name="playLists">
-	<h3>PlayList</h3>
 		{{#each videos}}
-			<a href="" class="each-video" data-id = "{{id}}" data-title = "{{title}}">
-				{{title}}
-				<img src="{{thumbnail.hqDefault}}" alt="">
-			</a>
+			<div class="each-video">	
+				<a href="" id="each-video" class="clearfix" data-id = "{{id}}" data-title = "{{title}}">
+					<img src="{{thumbnail.hqDefault}}" alt="">
+					<p class="title">{{title}}</p>
+				</a>
+			</div>	
 		{{/each }}
 </template>

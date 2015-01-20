@@ -1,0 +1,96 @@
+@import 'partials/_variables'
+*
+	margin: 0px
+	padding: 0px
+
+body 
+	background: $l-gray
+	font: 15px $proxima-c
+
+.clearfix
+	clear: both
+	display: table
+	content: ''
+
+.wrapper
+	.header
+		background: #fff
+		width: 100%
+		.search
+			width: 50%
+			margin: 0 auto
+			padding: 12px
+			input
+				padding: 5px 10px
+				width: 50%
+				font-size: 15px
+				font-family: $proxima-c
+
+
+.content
+	padding-top: 15px 
+	width: 75%
+	margin: 0 auto
+	.player
+		float: left
+		width: 70%
+		#video-title
+			padding: 5px 0px
+			font-size: 22px
+			font-family: $proxima-c
+	.playlist-section
+		float: right
+		width: 27%
+		background: #fff
+		padding: 10px
+		.each-video
+			a
+				text-decoration: none;
+			img
+				width: 40%
+				height: 100px
+				margin: 0 5px 5px 0
+				float: left
+			p
+				float: right
+				width: 57%
+
+.footer
+	border-top: 1px solid $m-gray
+	background: #fff
+	width: 100%
+	position: fixed
+	bottom: 0
+	.foot-wrap
+		width: 50%
+		margin: 0 auto
+		padding: 10px
+		text-align: center
+		p
+			font: 14px $proxima-c
+			letter-spacing: 2px
+			color: $gray-black
+			display: inline-block
+			padding: 0 5px
+			a
+				text-decoration: none
+				color: $m-blue
+				&:hover
+					color: $flat-pink
+			.love
+				color: $m-red
+		.social
+			display: inline-block
+			a
+				padding: 0 10px 0 0
+			a.twitter
+				color: $twitter-blue
+			a.facebook
+				color: $fb-blue
+
+
+
+
+
+
+
