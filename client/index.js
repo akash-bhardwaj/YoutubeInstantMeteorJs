@@ -13,9 +13,17 @@ Template.searchBox.events({
 	}
 });
 
-Template.playLists.helpers({
-	videos: function(){
+Template.playLists.helpers({  
+		videos : function(){
 		return Session.get("playlist");
+	 }
+});
+Template.playLists.events({
+	'click .each-video' : function(e){
+		e.preventDefault();
+		var vidId = e.currentTarget.dataset.id;
+		var vidTitle = e.currentTarget.dataset.title;
+		loadAndPlayVideo(vidId, vidTitle);
 	}
 });
 
@@ -83,10 +91,10 @@ playInstantVideo = function(videos){
 	for(var i=0; i<=videos.length; i++){
 		var videoId = videos[i].id;
 		var videoTitle = videos[i].title;
-		playAndLoadVideo(videos[0].id, videos[0].title);
+		loadAndPlayVideo(videos[0].id, videos[0].title);
 	}
 }
-playAndLoadVideo = function(videoid, videotitle){
+loadAndPlayVideo = function(videoid, videotitle){
 	if(ytplayer){
 		ytplayer.loadVideoById(videoid);
 		document.getElementById("video-title").innerHTML = videotitle;

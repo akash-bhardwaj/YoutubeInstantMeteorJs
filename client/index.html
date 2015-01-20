@@ -1,8 +1,9 @@
 <head>
   <title>YoutubeInstant</title>
   <script src="http://ajax.googleapis.com/ajax/libs/swfobject/2.2/swfobject.js" type="text/javascript"></script>
-	<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.2/jquery.min.js"></script>
 	<script src="https://ajax.googleapis.com/ajax/libs/jqueryui/1.11.2/jquery-ui.min.js"></script>
+	<script src="//use.typekit.net/qlu0fiu.js"></script>
+	<script>try{Typekit.load();}catch(e){}</script>
 </head>
 
 <body>
@@ -20,10 +21,10 @@
 </template>
 <template name="playLists">
 	<h3>PlayList</h3>
-	<div class="playlisted">
 		{{#each videos}}
-			{{ title }}
-			<img src="{{thumbnail.hqDefault}}" alt="" width=100px; height=100px;>
-		{{/each}}
-	</div>
+			<a href="" class="each-video" data-id = "{{id}}" data-title = "{{title}}">
+				{{title}}
+				<img src="{{thumbnail.hqDefault}}" alt="">
+			</a>
+		{{/each }}
 </template>
