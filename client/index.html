@@ -8,12 +8,22 @@
 <body>
 	{{> searchBox }}<br />
 	{{> loadPlayer }}
+	{{> playLists }}
 </body>
 
 <template name="searchBox">
 	<input type="text" value="" id="searchbox">
 </template>
 <template name="loadPlayer">
-	<div id="ytapiplayer">Install Flash</div>
+	<div id="ytapiplayer">You need Flash to watch the videos. Please install!</div>
 	<div id="video-title"></div>
+</template>
+<template name="playLists">
+	<h3>PlayList</h3>
+	<div class="playlisted">
+		{{#each videos}}
+			{{ title }}
+			<img src="{{thumbnail.hqDefault}}" alt="" width=100px; height=100px;>
+		{{/each}}
+	</div>
 </template>
